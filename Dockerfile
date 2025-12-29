@@ -30,6 +30,8 @@ RUN apk add --no-cache libc6-compat
 RUN apk update
 WORKDIR /app
 
+RUN pnpm add turbo@^2.5.2 -g
+
 # First install the dependencies (as they change less often)
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
